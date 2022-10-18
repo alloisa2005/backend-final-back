@@ -9,8 +9,7 @@ const validarIdProd = async (req, res, next) => {
 
     // Si el producto no existe
     if(!prod) return res.status(404).send({status: 'ERROR', result: `No existe producto ID: ${id_prod}`});
-
-    req.ja = 'JAJA';
+    
     next();
   } catch (error) {
     return res.status(404).send({status: 'ERROR', result: error.message});

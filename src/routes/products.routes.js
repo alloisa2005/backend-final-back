@@ -3,7 +3,7 @@ const router = express.Router();
 const ProductController = require('../controllers/product.controller')
 
 // Middleware que verifica existencia de id de producto
-const { validarIdProd} = require('../middlewares/validaciones')
+const { validarIdProd} = require('../middlewares/validarIds')
 
 router.get('/', ProductController.getAll)
 
