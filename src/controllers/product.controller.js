@@ -1,10 +1,12 @@
 
 const Product = require('../models/product.model');
+const Cart = require('../models/cart.model');
 
 class ProductController {
   async getAll(req, res) {
     try {
       let prods = await Product.find();
+      let cart = await Cart.create({products:[{cant:2, price:234},{cant:44, price:432}]});
 
       return res.status(200).send({status: 'OK', result: prods});
     } catch (error) {
